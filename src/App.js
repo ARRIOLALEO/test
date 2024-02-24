@@ -14,7 +14,6 @@ const App = () =>  {
       
  useEffect(()=>{
   const  FavoriteMovies=JSON.parse(localStorage.getItem('favoriteMovies'));
-  console.log(FavoriteMovies)
   FavoriteMovies!==null &&setFavMovie(FavoriteMovies)
  },[])   
      
@@ -24,7 +23,7 @@ const App = () =>  {
    
   }
   //Fetch the data according to search input value
-  const handleSearchValue=()=>{
+   const handleSearchValue=()=>{
     fetch(`https://www.omdbapi.com/?apikey=29ad3690&s=${inputValue}`)
           .then(res=>res.json())
           .then(data=>setMovieData(data.Search))
